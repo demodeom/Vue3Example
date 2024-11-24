@@ -8,8 +8,13 @@
     "sex": "女",
   })
 
-  // 修改对象值
-  userInfo.age = 19
+  const increaseAge = (num=1) => {
+    userInfo.age += num;
+  }
+
+  const decreaseAge = (num=1) => {
+    userInfo.age -= num;
+  }
 
 </script>
 
@@ -30,8 +35,29 @@
     <span>{{ userInfo.sex }}</span>
   </div>
 
+  <div>
+    <button v-on:click="increaseAge()">加 1 岁</button>
+    <button v-on:click="decreaseAge()">减 1 岁</button>
+  </div>
+
+
+  <div>
+    <button v-on:click="increaseAge(5)">加 5 岁</button>
+    <button v-on:click="decreaseAge(5)">减 5 岁</button>
+  </div>
+
+  <div>
+
+  </div>
+
 </template>
 
 <style scoped>
+div{
+  padding: 10px;
+}
 
+button{
+  margin-right: 20px;
+}
 </style>
