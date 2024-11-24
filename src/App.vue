@@ -1,25 +1,34 @@
 <script setup>
-  import {ref} from "vue";
+  import {reactive} from "vue";
 
-  const num1 = ref();
-  num1.value = 2
+  // 定义对象
+  const userInfo = reactive({
+    "name": "小甜甜",
+    "age": 18,
+    "sex": "女",
+  })
 
-  const num2 = ref(0);
-  num2.value = 3
+  // 修改对象值
+  userInfo.age = 19
 
 </script>
 
 <template>
+
   <div>
-    <span>Num1: </span>
-    <span>{{ num1 }}</span>
+    <span>姓名: </span>
+    <span>{{ userInfo.name }}</span>
   </div>
 
   <div>
-    <span>Num2: </span>
-    <span>{{ num2 }}</span>
+    <span>年龄: </span>
+    <span>{{ userInfo.age }}</span>
   </div>
 
+  <div>
+    <span>性别: </span>
+    <span>{{ userInfo.sex }}</span>
+  </div>
 
 </template>
 
