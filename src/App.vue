@@ -1,78 +1,72 @@
 <script setup>
-import {reactive, ref} from "vue";
-
-// 定义对象
-const userList = reactive([
-  {
-    "id": 1,
-    "name": "小甜甜",
-    "age": 18,
-    "sex": "女",
-  },
-  {
-    "id": 2,
-    "name": "小甜甜",
-    "age": 19,
-    "sex": "男",
-  },
-  {
-    "id": 3,
-    "name": "小甜甜",
-    "age": 20,
-    "sex": "女",
-  },
-  {
-    "id": 4,
-    "name": "小甜甜",
-    "age": 21,
-    "sex": "保密",
-  },
-])
 
 </script>
 
 <template>
 
-  <div class="container">
-    <table>
-      <thead>
-      <tr>
-        <th>学号</th>
-        <th>姓名</th>
-        <th>年龄</th>
-        <th>性别</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(item, index) in userList" :data-index="index">
-        <td>{{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.age }}</td>
-        <td v-if="item.sex === '男'" style="background-color: blue;color: white">{{ item.sex }}</td>
-        <td v-else-if="item.sex === '女'" style="background-color: red;color: white">{{ item.sex }}</td>
-        <td v-else style="background-color: orange;color: white">{{ item.sex }}</td>
-      </tr>
-      </tbody>
-    </table>
+  <div>
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Primary</button>
+    <button class="btn btn-success">Primary</button>
+    <button class="btn btn-info">Primary</button>
+    <button class="btn btn-warning">Primary</button>
+    <button class="btn btn-danger">Primary</button>
+    <button class="btn btn-dark">Primary</button>
   </div>
 
 </template>
 
 <style scoped>
-.container {
-  width: 800px;
-  margin: 0 auto;
-}
-
-table {
-  width: 800px;
-  border: 1px solid black;
-  border-spacing: 0;
+.btn{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
   text-align: center;
+  text-decoration: none;
+  padding: .375rem .75rem;
+  margin: .25rem .125rem;
+  border-radius: .25rem;
+  border: 1px solid transparent;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 
-th, td {
-  border: 1px solid black;
-  height: 30px;
+.btn-primary{
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  font-weight: 400;
+}
+.btn-secondary{
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+.btn-success{
+  color: #fff;
+  background-color: #198754;
+  border-color: #198754;
+}
+.btn-danger{
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-warning{
+  color: #000;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-info{
+  color: #000;
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.btn-dark{
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
 }
 </style>
