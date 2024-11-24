@@ -1,5 +1,5 @@
 <script setup>
-  import {reactive} from "vue";
+import {reactive, ref} from "vue";
 
   // 定义对象
   const userInfo = reactive({
@@ -8,13 +8,16 @@
     "sex": "女",
   })
 
-  const increaseAge = (num=1) => {
-    userInfo.age += num;
+  const increaseAge = () => {
+    userInfo.age += Number(changeNum.value);
   }
 
-  const decreaseAge = (num=1) => {
-    userInfo.age -= num;
+  const decreaseAge = () => {
+    userInfo.age -= Number(changeNum.value);
   }
+
+  const changeNum = ref()
+  changeNum.value = 1
 
 </script>
 
@@ -36,14 +39,13 @@
   </div>
 
   <div>
-    <button v-on:click="increaseAge()">加 1 岁</button>
-    <button v-on:click="decreaseAge()">减 1 岁</button>
+    <input type="text" v-model="changeNum" />
   </div>
 
 
   <div>
-    <button v-on:click="increaseAge(5)">加 5 岁</button>
-    <button v-on:click="decreaseAge(5)">减 5 岁</button>
+    <button v-on:click="increaseAge">增</button>
+    <button v-on:click="decreaseAge">减</button>
   </div>
 
   <div>
