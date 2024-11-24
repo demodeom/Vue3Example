@@ -1,9 +1,11 @@
 <script setup>
-defineProps(["content", "color"]);
+defineProps(["color"]);
 </script>
 
 <template>
-<button :class="['btn', 'btn-' + color]" >{{ content }}</button>
+<button :class="['btn', 'btn-' + color]" >
+  <slot></slot>
+</button>
 </template>
 
 <style scoped>

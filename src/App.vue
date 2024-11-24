@@ -1,14 +1,14 @@
 <script setup>
 
-import ColorButton from "./components/ColorButton.vue";
+import SuperButton from "./components/SuperButton.vue";
 </script>
 
 <template>
 
   <div>
-    <ColorButton content="添加" color="primary" />
-    <ColorButton content="删除" color="danger" />
-    <ColorButton content="修改" color="edit" />
+    <SuperButton color="primary">添加</SuperButton>
+    <SuperButton color="danger">删除</SuperButton>
+    <SuperButton color="info">详情</SuperButton>
   </div>
 
 </template>
